@@ -180,3 +180,11 @@
 .orphanage-details .orphanage-details-content button.contact-button:hover {
   background: #36cf82;
 }
+
+.orphanage-details .orphanage-details-content a.whats-link {
+  text-decoration: none;
+}
+
+.orphanage-details .orphanage-details-content a.whats-link:hover {
+  text-decoration: none;
+}

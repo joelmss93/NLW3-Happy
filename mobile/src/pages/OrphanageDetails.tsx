@@ -21,6 +21,7 @@ interface Orphanage {
   about: string;
   instructions: string;
   opening_hours: string;
+  contact: string;
   open_on_weekends: boolean;
   images: Array<{
     id: number;
@@ -42,6 +43,10 @@ export default function OrphanageDetails() {
 
   function handleOpenGoogleMapRoutes() {
     Linking.openURL(`https://www.google.com/maps/dir/?api=1&destination=${orphanage?.latitude},${orphanage?.longitude}`);
+  }
+
+  function handleWhatsappContact() {
+    Linking.openURL(`https://api.whatsapp.com/send?1=pt_BR&phone=55${orphanage?.contact}&text=Olá, gostaria de pedir algumas informações`);
   }
 
   if (!orphanage) {
@@ -124,7 +129,7 @@ export default function OrphanageDetails() {
 
         </View>
 
-        <RectButton style={styles.contactButton} onPress={() => { }}>
+        <RectButton style={styles.contactButton} onPress={handleWhatsappContact}>
           <FontAwesome name="whatsapp" size={24} color="#FFF" />
           <Text style={styles.contactButtonText}>Entrar em contato</Text>
         </RectButton>
